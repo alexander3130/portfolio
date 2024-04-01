@@ -1,0 +1,26 @@
+---
+import LinkedInIcon from "./icons/LinkedIn.astro";
+import InstagramIcon from "./icons/Instagram.astro";
+import SocialPill from "./icons/SocialPill.astro";
+---
+
+<div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+  <p
+    class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl"
+  >
+     Siempre estoy disponible para una charla. Envíame un correo electrónico a <a href="mailto:info@alexanderperez.space" class="text-primary-500 hover:underline">info@alexanderperez.space</a> o contáctame en redes sociales.
+
+  </p>
+
+  <div class="flex gap-4 mt-5 flex-wrap">
+    <SocialPill href="https://www.linkedin.com/in/alexander-perez-ruiz-578459262/">
+      <LinkedInIcon class="size-4 md:size-7" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://www.instagram.com/reznder_03/">
+      <InstagramIcon class="size-4 md:size-7" />
+      Instagram
+    </SocialPill>
+  </div>
+</div>
+

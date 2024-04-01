@@ -1,0 +1,193 @@
+---
+import ReactIcon from "./icons/React.astro";
+import JavascriptIcon from "./icons/Javascript.astro";
+import BootstrapIcon from "./icons/Bootstrap.astro";
+import MaterialUIIcon from "./icons/MaterialUI.astro";
+import ExpressIcon from "./icons/Express.astro";
+import NodejsIcon from "./icons/NodeJS.astro";
+import HTMLIcon from "./icons/HTML.astro";
+import CSSIcon from "./icons/CSS.astro";
+import NextjsIcon from "./icons/Nextjs.astro";
+import TailwindCSSIcon from "./icons/TailwindCss.astro";
+import MongoDBIcon from "./icons/MongoDb.astro";
+import CloudinaryIcon from "./icons/Cloudinary.astro";
+import StripeIcon from "./icons/Stripe.astro";
+import SequelizeIcon from "./icons/Sequelize.astro";
+import DemoICon from "@/components/icons/Demo.astro";
+import GithubIcon from "@/components/icons/Github.astro";
+import LinkButton from "./LinkButton.astro";
+
+const TAGS = {
+  HTML: {
+    name: "HTML5",
+    class: "bg-orange-500 text-black",
+    icon: HTMLIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-blue-500 text-white",
+    icon: CSSIcon,
+  },
+  Javascript: {
+    name: "Javascript",
+    class: "bg-yellow-600 text-black",
+    icon: JavascriptIcon,
+  },
+  Nodejs: {
+    name: "Node.js",
+    class: "bg-green-800 text-white",
+    icon: NodejsIcon,
+  },
+  Express: {
+    name: "Express",
+    class: "bg-black-500 text-white",
+    icon: ExpressIcon,
+  },
+  Sequelize: {
+    name: "Sequelize",
+    class: "bg-gray-800 text-white",
+    icon: SequelizeIcon,
+  },
+  MongoDB: {
+    name: "MongoDB",
+    class: "bg-green-500 text-white",
+    icon: MongoDBIcon, 
+  },
+  React: {
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: ReactIcon,
+  },
+  Nextjs: {
+    name: "Next.js",
+    class: "bg-gray-900 text-white",
+    icon: NextjsIcon
+  },
+  Bootstrap: {
+    name: "Bootstrap",
+    class: "bg-indigo-800 text-white",
+    icon: BootstrapIcon,
+  },
+  Tailwind: {
+    name: "Tailwind CSS",
+    class: "bg-cyan-600 text-white",
+    icon: TailwindCSSIcon, 
+  },
+  MaterialUI: {
+    name: "MaterialUI",
+    class: "bg-blue-900 text-white",
+    icon: MaterialUIIcon,
+  },
+  Cloudinary: {
+    name: "Cloudinary",
+    class: "bg-gray-600 text-white",
+    icon: CloudinaryIcon, 
+  },
+  Stripe: {
+    name: "Stripe",
+    class: "bg-blue-600 text-white",
+    icon: StripeIcon, 
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "E-commerce AmeliaSwimWear",
+    description:
+      "El ecommerce AmeliaSwimWear es un proyecto que busca la experiencia de compra en línea mas comodo y eficiente para el cliente. Con un enfoque en ofrecer productos asequibles, el sitio web proporciona una interfaz de usuario atractiva y receptiva, permitiendo a los usuarios explorar productos de distintas catergorias.",
+    link: "https://ameliaswimwear.com/",
+    github: "https://github.com/alexander3130",
+    image: "/projects/svgl.webp",
+    tags: [
+      TAGS.Javascript,
+      TAGS.Nodejs,
+      TAGS.React,
+    ],
+  },
+  {
+    title: "Desarrollo SaviaCorp",
+    description:
+      "Proyecto encargado de manejar los empleados, novedades de nomina, pedidos, inventarios, mantenimiento y ficha tecnica de equipos, etc.",
+    link: "app.saviaservicios.com",
+    github: "https://github.com/jlde-Freelance/app.saviaservicios.com",
+    image: "/projects/20shots_so.webp",
+    tags: [
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.Bootstrap,
+      TAGS.Javascript,
+      TAGS.Nodejs,
+      TAGS.Tailwind,
+    ],
+  },
+ /* {
+    title: "Imaginify - Saas Aplicattion AI",
+    description:
+    "Imaginify es una plataforma de software como servicio (SaaS) que ofrece potentes herramientas de edición de imágenes impulsadas por inteligencia artificial. Elimina fondos, agrega efectos y más.",
+    link: "https://imaginify-hub.vercel.app",
+    github: "https://github.com/TDelgadodev/ai-saas-platform",
+    image: "/projects/539shots_so.webp",
+    tags: [
+      TAGS.React,
+      TAGS.Nextjs,
+      TAGS.Tailwind,
+      TAGS.MongoDB,
+      TAGS.Cloudinary,
+      TAGS.Stripe 
+    ]
+  }*/
+];
+---
+
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+            loading="lazy"
+            class="rounded shadow-2xl shadow-white/10 aspect-video"
+            src={image}
+            alt={`Captura de pantalla del proyecto ${image}`}
+            />
+          </div>
+        </div>
+
+     <div class="w-full md:w-1/2 md:max-w-lg">
+        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+          {title}
+        </h3>
+        <div class="flex flex-wrap mt-2">
+          {tags.map((tag) => (
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-2 mx-1`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          ))}
+        </div>
+        <div class="mt-2 text-gray-700 dark:text-gray-400">
+          {description}
+        </div>
+        <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GithubIcon class="size-6" />
+              Code
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <DemoICon class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+      </div>
+      </article>
+    ))
+  }
+</div>

@@ -1,0 +1,38 @@
+---
+import ExperienceItem from "@/components/ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "Diciembre. 2022 - Marzo. 2023",
+    title: "Desarrollador Web Full Stack de Proyectos De Uso Interno",
+    description:
+      "Desarrollador en PHP, Laravel, JavaScript, HTML y CSS. Desarrollo páginas web para la compañía y aplicativos web de uso interno",
+    responsibilities: [
+      "Integración de APIs con Javascript, Laravel,  para el consumo y visualización de datos.",
+      "Mejora de la interactividad y la experiencia del usuario.",
+    ],
+  },
+  {
+    date: "Marzo. 2023 - Actualidad",
+    title:
+      "Desarrollo FullStack - Freelance",
+    description:
+      "He realizado multiples proyectos, paginas web con diferentes tecnologías como Js, CSS, Sass, React, Laravel, WordPress. ",
+    responsibilities: [
+      "Maquetado y estilos utilizando HTML, CSS y Bootstrap.",
+      "Implementación de funcionalidades con Javascript y NodeJS.",
+      "Diseño y gestión de la base de datos utilizando MySQLS.",
+      "Colaboración activa en un entorno ágil utilizando metodologías SCRUM.",
+    ],
+  },  
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
